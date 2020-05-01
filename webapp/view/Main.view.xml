@@ -1,0 +1,42 @@
+<mvc:View controllerName="sap.ui.pedro.crud.controller.Main" 
+  xmlns="sap.ui.table" 
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns:u="sap.ui.unified" 
+  xmlns:c="sap.ui.core" 
+  xmlns:m="sap.m" height="100%">
+  <m:Page showHeader="true" enableScrolling="false" class="sapUiContentPadding" title="SAP MII - Pedro">
+    <m:content>
+      <Table id="usuario_table" rows="{ path: 'usuarios>/'}" selectionMode="Multi" visibleRowCount="10" ariaLabelledBy="title" class="sapUiResponsiveMargin" width="auto" rowSelectionChange="onUsuarioRowSelectionChange" cellClick="onUsuarioRowSelectionChange">
+        <extension>
+          <m:OverflowToolbar>
+            <m:Title id="title" text="Users"/>
+            <m:ToolbarSpacer/>
+            <m:Button type="Default" icon="sap-icon://add" text="Add" press="onAddButtonPress"/>
+            <m:Button type="Default" icon="sap-icon://edit" text="Edit" press="onEditButtonPress" id="btn_edit"/>
+            <m:Button type="Reject" icon="sap-icon://delete" text="Delete" press="onDeleteButtonPress" id="btn_delete" enabled="false"/>
+          </m:OverflowToolbar>
+        </extension>
+        <columns>
+          <Column>
+            <m:Label text="Name" />
+            <template>
+              <m:Text text="{usuarios>NAME}" wrapping="false" />
+            </template>
+          </Column>
+          <Column>
+            <m:Label text="Email" />
+            <template>
+              <m:Text text="{usuarios>EMAIL}" wrapping="false" />
+            </template>
+          </Column>
+          <!-- <Column>
+            <template>
+              <core:Icon src="sap-icon://delete" press="onDeleteRow" />
+            </template>
+          </Column> -->
+        </columns>
+      </Table>
+
+    </m:content>
+  </m:Page>
+</mvc:View>

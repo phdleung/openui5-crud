@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns="sap.m" 
+    xmlns:core="sap.ui.core" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form">
+    <Dialog id="usuarioDialog">
+        <customHeader>
+            <Bar>
+                <contentMiddle>
+                    <Text id="title_window" text="{title} User Form"></Text>
+                </contentMiddle>
+                <contentRight>
+                    <Button icon="sap-icon://decline" press="onCancelButtonPress"></Button>
+                </contentRight>
+            </Bar>
+        </customHeader>
+        <content>
+            <Panel>
+                <f:SimpleForm busyIndicatorDelay="0" id="form-add-apont" maxContainerCols="2" editable="true" class="editableForm" layout="ResponsiveGridLayout">
+                    <f:content>
+                        <Label text="Name"/>
+                        <Input maxLength="100" width="100%" value="{formUsuario>/NAME}" placeholder="" />
+                        <Label text="Email"/>
+                        <Input maxLength="100" width="100%" value="{formUsuario>/EMAIL}" placeholder="" />
+                    </f:content>
+                </f:SimpleForm>
+            </Panel>
+        </content>
+        <beginButton>
+            <Button type="Reject" icon="sap-icon://cancel" text="Cancel" press="onCancelButtonPress"/>
+        </beginButton>
+        <endButton>
+            <Button type="Accept" icon="sap-icon://save" text="Save" press="onSaveButtonPress"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
